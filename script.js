@@ -102,7 +102,7 @@ playBtn.addEventListener('click', () => (isPlaying ? pauseSong():playSong() ) );
 function loadSong(song){
     title.textContent=song.displayName;
     anime.textContent=song.anime;
-    music.src=`music/${song.name}.mp3`;
+    music.src=`Music/${song.name}.mp3`;
     image.src=`img/${song.name}.jpg`;
 
 }
