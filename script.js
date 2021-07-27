@@ -1,6 +1,6 @@
 const image=document.getElementById('image');
 const title=document.getElementById('title');
-const anime=document.getElementById('anime');
+const artist=document.getElementById('artist');
 const backgroundImage=document.getElementById('main-img');
 
 const playerContainer=document.getElementById('player-container');
@@ -19,87 +19,25 @@ const progress=document.getElementById('progress');
 
 const songs=[
     {
-    name: 'Crazy Noisy Bizarre Town',
-    displayName: 'Crazy Noisy Bizarre Town',
-    anime: "JoJo's Bizarre Adventures",
+    name: 'The less I know the better',
+    displayName: 'The Less I Know The Better',
+    artist: "Tame Impala",
     color: 'rgb(85, 3, 153)'
     
 },
 {
-    name: 'Lost in paradise',
-    displayName: 'Lost In Paradise',
-    anime: "Jujutsu Kaisen" ,
-    color: 'rgb(218, 59, 138)'
+    name: 'Adventure of a lifetime',
+    displayName: 'Adventure of a Lifetime',
+    artist: "Coldplay" ,
+    color: 'rgb(9, 150, 56)'
 
 },
 {
-    name: 'Kaikai',
-    displayName: 'Kaikai Kitan Jujutsu Kaisen OP',
-    anime: "Jujutsu Kaisen" ,
-    color: "rgb(190, 5, 5)"
+    name: 'Chlorine',
+    displayName: 'Chlorine',
+    artist: "Twenty One Pilots" ,
+    color: " rgb(12, 108, 187)"
 
-
-},
-{
-    name: "Giorno's Theme" ,
-    displayName: "Giorno's Theme",
-    anime: "JoJo's Bizarre Adventures",
-    color:"rgb(201, 164, 2)"
-
-},
-{
-    name: 'Roundabout',
-    displayName: 'Roundabout',
-    anime: "JoJo's Bizarre Adventures" ,
-    color: "red"
-
-},
-{
-    name: 'World that was transparent',
-    displayName: 'The world that was transparent',
-    anime: "Naruto" ,
-    color: "rgb(201, 98, 2)"
-
-},
-{
-    name: 'Silhouette',
-    displayName: 'Silhouette',
-    anime: "Naruto" ,
-    color: "rgb(231, 209, 6)"
-
-},
-{
-    name: 'Great Days',
-    displayName: 'Great Days',
-    anime: "JoJo's Bizarre Adventures", 
-    color: "rgb(180, 10, 75)"
-},
-{
-    name: 'Kaguya sama',
-    displayName: 'Kaguya-Sama OP',
-    anime: "Kaguya-Sama Love is War" ,
-    color: "palevioletred"
-
-},
-{
-    name: 'Tokyo Ghoul',
-    displayName: 'Tokyo Ghoul OP',
-    anime: "Tokyo Ghoul", 
-    color:"purple"
-
-},
-{
-    name: 'Demon Slayer OP',
-    displayName: 'Demon Slayer OP',
-    anime: "Demon Slayer", 
-    color:"rgb(17, 153, 74)"
-
-},
-{
-    name: 'AOT',
-    displayName: 'Shinzo Wo Sassageyo',
-    anime: "Attack on Titan", 
-    color:"rgb(153, 83, 3)"
 
 }
 ];
@@ -126,10 +64,10 @@ playBtn.addEventListener('click', () => (isPlaying ? pauseSong():playSong() ) );
 
 function loadSong(song){
     title.textContent=song.displayName;
-    anime.textContent=song.anime;
+    artist.textContent=song.artist;
     music.src=`music/${song.name}.mp3`;
     image.src=`img/${song.name}.jpg`;
-    backgroundImage.src=`backgrounds/${song.anime}.jpg`
+    backgroundImage.src=`backgrounds/${song.artist}.jpg`
 
     playerContainer.style.backgroundColor=song.color;
     progress.style.backgroundColor=song.color;
@@ -205,7 +143,7 @@ $("#volume").slider({
 
 min: 0,
 max: 100,
-value: 75,
+value: 50,
 range: "min",
 slide: function (event, ui) {
     setVolume(ui.value / 100);
